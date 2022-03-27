@@ -1,0 +1,19 @@
+package com.company;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+public class Height {
+    public static void main (String[] args) throws  Exception{
+        File F1=new File("C:\\Users\\dell\\Desktop\\rash.jpeg");
+        BufferedImage img= ImageIO.read(F1);
+        System.out.println("Hogyi");
+        int height= img.getHeight();
+        int width = img.getWidth();
+        System.out.println("Height:"+height);
+        System.out.println("Width:"+width);
+        System.out.println("Res:"+height*width);
+
+    }
+}

@@ -1,0 +1,38 @@
+package com.company;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        int width ,height,i,j,count=0;
+        File F1=new File("C:\\Users\\dell\\Desktop\\rash.jpeg");
+        BufferedImage img = ImageIO.read(F1);
+         height= img.getHeight();
+         width=img.getWidth();
+        for(i=0;i<height;i++) {
+            for (j = 0; j < width; j++) {
+                count++;
+                Color c = new Color(img.getRGB(j, i));
+                int red = c.getRed();
+                int green = c.getGreen();
+                int blue = c.getBlue();
+
+                int r = (int) (0.288 * red);
+                int g = (int) (0.5 * green);
+                int b = (int) (0.114 * blue);
+                int bw = r + g + b;
+                Color nc = new Color(bw, bw, bw);
+                img.setRGB(j, i, nc.getRGB());
+            }
+        }
+        File F2=new File("C:\\Users\\dell\\Desktop\\rash1.jpeg");
+        ImageIO.write(img,"png",F2);
+
+            }
+        }
+	// write your code here
+
